@@ -8,9 +8,9 @@
 use Test::Simple tests=>4;
 use Time::Travel;
 use Time::ParseDate;
-my $time0 = new Time::Travel(localtime);
-my $time1 = new Time::Travel(localtime);
-my @param1 = qw(7dy 60hr 394mn 1222sc);
+my $time0 = new Time::Travel(0,0,21,31,2,1985);
+my $time1 = new Time::Travel(0,0,21,31,2,1985);
+my @param1 = qw(3hr);
 my @param2 = qw(-7dy 60hr -394mn 1222sc);
 my $sec1 = &convert_to_sec(@param1);
 my $sec2 = &convert_to_sec(@param2);
@@ -25,7 +25,7 @@ my $s2 = parsedate($t2,UK=>1,TIMEFIRST=>1);
 ok(defined $time0);
 ok($s1-$s0 == $sec1);
 ok($s2-$s0 == $sec2);
-$time0 = new Time::Travel(07,13,16,19,5,2003);
+$time0 = new Time::Travel(localtime);
 ok(defined $time0);
 
 sub convert_to_sec {

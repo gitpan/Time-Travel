@@ -4,3 +4,6 @@ Revision history for Perl extension Time::Travel.
 	- original version; created by h2xs 1.22 with options
 		-AX -n Time::Travel
 
+0.02  Mon May 19 16:50:08 2003
+        - fixed a bug about month change around 30/31st. -- RP
+

@@ -16,7 +16,7 @@ our @UNIT     = qw(sc mn hr dy mo yr);
 our %FULLNAME = qw(sc seconds mn minutes hr hours dy days mo months yr years);
 our %MAXUNIT  = qw(sc 60 mn 60 hr 24 dy 31 mo 12 yr 100000);
 our %step;
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 sub new {
 
     my $proto = shift;
@@ -114,11 +114,11 @@ sub travel {
 	}
 	if ($step{$UNIT[$i]} != 0) {
 	    $self->{time}->[$i] += $step{$UNIT[$i]};
-	    my $newval = $self->{time}->[$i] % $maxval;
+	    my $newval = ($self->{time}->[$i] - $minval) % $maxval;
 	    if ($i < 5) {
-		$step{$UNIT[$i+1]} += ($self->{time}->[$i] - $newval) / $maxval;
+		$step{$UNIT[$i+1]} += + ($self->{time}->[$i] - $newval - $minval) / $maxval;
 	    }
-	    $self->{time}->[$i] = $newval;
+	    $self->{time}->[$i] = $newval + $minval;
 	}
     }
 }
