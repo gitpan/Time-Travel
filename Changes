@@ -7,3 +7,6 @@ Revision history for Perl extension Time::Travel.
 0.02  Mon May 19 16:50:08 2003
         - fixed a bug about month change around 30/31st. -- RP
 
+0.03 Tue May 20 09:49:30 2003
+	- fixed the test to avoid "uninitialized" warnings -- RP
+

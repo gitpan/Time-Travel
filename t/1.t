@@ -10,7 +10,7 @@ use Time::Travel;
 use Time::ParseDate;
 my $time0 = new Time::Travel(0,0,21,31,2,1985);
 my $time1 = new Time::Travel(0,0,21,31,2,1985);
-my @param1 = qw(3hr);
+my @param1 = qw(7dy 60hr 394mn 1222sc);
 my @param2 = qw(-7dy 60hr -394mn 1222sc);
 my $sec1 = &convert_to_sec(@param1);
 my $sec2 = &convert_to_sec(@param2);
