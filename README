@@ -1,0 +1,36 @@
+Time/Travel version 0.01
+========================
+
+The Time::Travel module produces a slim, quick method to slide
+across the time scale over a given period (NOT a given date).
+
+It is much simpler and shorter than the Date::Manip and Time::Piece.
+It creates an object which is in fact a reference to a six-member
+array. It is possible then to travel using this object and to land
+(print resulting time).
+
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+Time::DaysInMonth
+Date::Parse
+Time::ParseDate (for testing only!)
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2003 Roman M. Parparov <romm@empire.tau.ac.il>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself. 
+
